@@ -1,21 +1,44 @@
+import { fileURLToPath } from 'url'
+import { dirname, resolve } from 'path'
+const __dirname = dirname(fileURLToPath(import.meta.url))
+
+// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2024-04-03',
+  compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  fontawesome: {
-    icons: {
-      brands: ['github', 'telegram', 'android', 'windows', 'linux'],
-      solid: ['arrow-down'],
-    },
+  
+  // App configuration
+  app: {
+    head: {
+      htmlAttrs: {
+        lang: 'en'
+      },
+      link: [
+        { rel: 'canonical', href: 'https://musily.app' }
+      ]
+    }
   },
-  modules: [
-    '@nuxtjs/eslint-module',
-    '@vesp/nuxt-fontawesome',
-  ],
+
   css: [
-    '~/assets/scss/variables.scss',
-    '~/assets/scss/themes.scss',
-    '~/assets/scss/colors.scss',
-    '~/assets/scss/layout.scss',
-    '~/assets/scss/typography.scss',
+    '@fortawesome/fontawesome-free/css/all.css',
+    resolve(__dirname, 'assets/styles/main.scss')
   ],
-});
+  
+  components: {
+    dirs: [
+      {
+        path: resolve(__dirname, 'components'),
+        global: true
+      },
+      {
+        path: resolve(__dirname, 'app/components'),
+        global: true
+      }
+    ]
+  },
+  
+  alias: {
+    '~': fileURLToPath(new URL('./', import.meta.url)),
+    '@': fileURLToPath(new URL('./', import.meta.url))
+  }
+})

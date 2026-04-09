@@ -18,6 +18,7 @@
         <div v-if="!loading && version" class="version-info">
           <span class="version-badge">{{ version }}</span>
           <span class="release-date">Released {{ releaseDate }}</span>
+          <span class="developer-credit">Developed by Akhil TG</span>
         </div>
         <div v-if="loading" class="loading-spinner">Loading releases...</div>
         <div v-if="error" class="error-message">{{ error }}</div>
@@ -267,6 +268,13 @@ const getPlatformLabel = (platform: string) => {
 .release-date {
   color: $on-surface-color;
   font-size: 14px;
+}
+
+.developer-credit {
+  color: $primary-color;
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.8;
 }
 
 .loading-spinner {

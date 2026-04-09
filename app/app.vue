@@ -15,7 +15,7 @@
       <Meta name="theme-color" content="#151318" />
       
       <!-- OG Meta Tags -->
-      <Meta property="og:url" content="https://melos.app/" />
+      <Meta property="og:url" content="https://akhil-tg.github.io/Melos_web/" />
       <Meta property="og:type" content="website" />
       <Meta property="og:locale" content="en_US" />
       <Meta property="og:site_name" content="Melos" />

@@ -14,7 +14,7 @@ export default defineNuxtConfig({
         lang: 'en'
       },
       link: [
-        { rel: 'canonical', href: 'https://musily.app' }
+        { rel: 'canonical', href: 'https://akhil-tg.github.io/Melos_web' }
       ]
     }
   },
